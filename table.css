@@ -1,0 +1,99 @@
+/* 💡 تنسيق عام للصفحة */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    margin: 20px;
+}
+
+/* ✅ تنسيق الشعار */
+.logo {
+    display: block;
+    width: 120px;
+    margin: 20px auto;
+}
+
+/* ✅ تنسيق الحاوية */
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ✅ تنسيق العنوان */
+h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* ✅ تنسيق الجدول */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+
+/* ✅ تنسيق رأس الجدول */
+thead {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* ✅ تنسيق صفوف الجدول */
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+/* ✅ تغيير لون الصفوف بالتناوب */
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* ✅ تأثير عند تمرير الماوس */
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* ✅ تنسيق الأزرار للمسؤول */
+.adminActions button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    margin: 2px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.adminActions button:hover {
+    background-color: #0056b3;
+}
+
+/* ✅ إخفاء أزرار المسؤول للمستخدم العادي */
+.adminActions {
+    display: none;
+}
+
+/* ✅ جعل الصفحة متجاوبة */
+@media (max-width: 600px) {
+    table {
+        font-size: 14px;
+    }
+
+    .adminActions button {
+        font-size: 12px;
+        padding: 5px;
+    }
+}
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #f4f4f4 !important;
+    }
+}

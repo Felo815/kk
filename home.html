@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>جدول النقاط</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='table.css') }}">
+</head>
+<body>
+    <h2>جدول النقاط</h2>
+
+    {% if role == "admin" %}
+    <h3>إضافة شخص جديد</h3>
+    <form method="post">
+        <input type="text" name="name" placeholder="أدخل الاسم" required>
+        <button type="submit">إضافة</button>
+    </form>
+    {% endif %}
+
+    <table border="1">
+        <tr>
+            <th>الاسم</th>
+            <th>النقاط</th>
+            {% if role == "admin" %}
+            <th>تعديل</th>
+            {% endif %}
+        </tr>
+        {% for user in users %}
+        <tr>
+            <td>{{ user.name }}</td>
+            <td>{{ user.points }}</td>
+            {% if role == "admin" %}
+            <td>
+                <a href="{{ url_for('update_points', user_id=user.id, change=1) }}">+</a>
+                <a href="{{ url_for('update_points', user_id=user.id, change=-1) }}">-</a>
+            </td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ url_for('dashboard') }}">العودة</a>
+</body>
+</html>
